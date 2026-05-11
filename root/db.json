@@ -1,0 +1,9 @@
+{
+  "products": [
+    { "id": 1, "name": "Wireless Headphones", "category": "Electronics", "price": 59.99, "stock": 120, "image": "https://via.placeholder.com/150", "description": "High quality wireless headphones with noise cancellation." },
+    { "id": 2, "name": "Leather Wallet", "category": "Accessories", "price": 29.99, "stock": 75, "image": "https://via.placeholder.com/150", "description": "Slim genuine leather wallet with card slots." },
+    { "id": 3, "name": "Running Shoes", "category": "Footwear", "price": 89.99, "stock": 50, "image": "https://via.placeholder.com/150", "description": "Lightweight running shoes for all terrains." },
+    { "id": 4, "name": "Stainless Steel Bottle", "category": "Kitchen", "price": 19.99, "stock": 200, "image": "https://via.placeholder.com/150", "description": "Insulated stainless steel water bottle, 1L." },
+    { "id": 5, "name": "Backpack", "category": "Bags", "price": 49.99, "stock": 90, "image": "https://via.placeholder.com/150", "description": "Durable 30L backpack with laptop compartment." }
+  ]
+}
