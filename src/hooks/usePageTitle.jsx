@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
 
 export default function usePageTitle(title) {
-  useEffect(() => {
+  useEffect(() => {  
     document.title = `Coffee R Us | ${title}`
   }, [title])
-}
+}  
+  

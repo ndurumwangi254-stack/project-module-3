@@ -12,8 +12,8 @@ const renderHome = () => {
   return render(
     <CoffeeProvider>
       <Home />
-    </CoffeeProvider>
-  )
+    </CoffeeProvider>      
+  )   
 }
 
 describe('Home', () => {
