@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CoffeeProvider } from './context/CoffeeContext'
 import Navbar from './components/NavBar'
-import Home from './components/Home'
-import Shop from './components/Shop'
-import AdminPortal from './components/AdminPortal'
+import Home from './pages/Home'
+import Shop from './pages/Shop'
+import AdminPortal from './pages/AdminPortal'
 
 function App() {
   return (
