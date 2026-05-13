@@ -5,7 +5,7 @@ import usePageTitle from '../usePageTitle'
 describe('usePageTitle', () => {
   const originalTitle = document.title
 
-  beforeEach(() => {
+  beforeEach(() => { 
     document.title = 'Original Title'
   })
 
@@ -16,7 +16,7 @@ describe('usePageTitle', () => {
 
   it('updates document title with the provided title parameter', () => {
     renderHook(() => usePageTitle('Home'))
-
+    
     expect(document.title).toBe('Coffee R Us | Home')
   })
 

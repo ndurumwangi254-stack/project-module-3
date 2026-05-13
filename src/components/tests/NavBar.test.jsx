@@ -3,10 +3,10 @@ import { MemoryRouter } from 'react-router-dom'
 import userEvent from '@testing-library/user-event'
 import { describe, it, beforeEach, afterEach, expect } from 'vitest'
 import Navbar from '../NavBar'
-
+     
 const expectedNavLinks = [
   { to: '/', label: 'Home' },
-  { to: '/shop', label: 'Shop' },
+  { to: '/shop', label: 'Shop' }, 
   { to: '/admin', label: 'Admin Portal' },
 ]
 

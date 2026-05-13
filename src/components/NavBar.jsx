@@ -6,7 +6,7 @@ const links = [
   { to: '/admin', label: 'Admin Portal' }
 ]
 
-export default function Navbar() {
+export default function Navbar() {    
   return (
     <nav className="navbar">
       <div className="brand">Coffee R Us</div>

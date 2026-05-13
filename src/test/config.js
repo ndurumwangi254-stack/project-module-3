@@ -7,9 +7,9 @@ export const testConfig = {
     reviews: false,
   },
 
-  timeouts: {
+  timeouts: {   
     defaultWait: 1000,
-    apiCall: 3000,
+    apiCall: 3000,    
     animation: 500,
   },
 
