@@ -2,7 +2,7 @@ import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, it, beforeEach, afterEach, expect, vi } from 'vitest'
 import Home from '../Home'
-import { REAL KICKS KENYAProvider } from '../../context/REAL KICKS KENYAContext'
+import { CoffeeProvider } from '../../context/CoffeeContext '
 import { testConfig } from '../../tests/config'
 
 const mockHomeProps = {
@@ -10,9 +10,9 @@ const mockHomeProps = {
 
 const renderHome = () => {
   return render(
-    <REAL KICKS KENYAProvider>
+    <CoffeeProvider>
       <Home />
-    </REAL KICKS KENYAProvider>      
+    </CoffeeProvider>      
   )   
 }
 
@@ -29,14 +29,14 @@ describe('Home', () => {
     it('renders the hero card with correct heading text', () => {
       renderHome()
 
-      const heading = screen.getByRole('heading', { level: 1, name: /REAL KICKS KENYA R Us/i })
+      const heading = screen.getByRole('heading', { level: 1, name: /Coffee R Us/i })
       expect(heading).toBeInTheDocument()
     })
 
     it('renders the hero subtitle text', () => {
       renderHome()
 
-      const subtitle = screen.getByText('The go-to store for your REAL KICKS KENYA needs.')
+      const subtitle = screen.getByText('The go-to store for your coffee needs.')
       expect(subtitle).toBeInTheDocument()
     })
 
@@ -64,7 +64,7 @@ describe('Home', () => {
       expect(searchInput).toHaveAttribute('type', 'search')
     })
 
-    it('filters REAL KICKS KENYA list when searching by REAL KICKS KENYA name', async () => {
+    it('filters coffee list when searching by coffee name', async () => {
       const user = userEvent.setup()
       renderHome()
 
@@ -85,13 +85,13 @@ describe('Home', () => {
 
       const searchInput = screen.getByPlaceholderText(/Search blends, origins, or flavours/i)
 
-      await user.type(searchInput, 'NonexistentREAL KICKS KENYA12345')
+      await user.type(searchInput, 'NonexistentCoffee12345')
 
-      const emptyMessage = screen.getByText(/No REAL KICKS KENYAs found. Try another search term./i)
+      const emptyMessage = screen.getByText(/No coffees found. Try another search term./i)
       expect(emptyMessage).toBeInTheDocument()
     })
 
-    it('filters REAL KICKS KENYA list when searching by origin', async () => {
+    it('filters coffee list when searching by origin', async () => {
       const user = userEvent.setup()
       renderHome()
 
@@ -99,11 +99,11 @@ describe('Home', () => {
 
       await user.type(searchInput, 'Italy')
 
-      const REAL KICKS KENYAWithOrigin = screen.getByText(/Italy/)
-      expect(REAL KICKS KENYAWithOrigin).toBeInTheDocument()
+      const coffeeWithOrigin = screen.getByText(/Italy/)
+      expect(coffeeWithOrigin).toBeInTheDocument()
     })
 
-    it('filters REAL KICKS KENYA list when searching by description', async () => {
+    it('filters coffee list when searching by description', async () => {
       const user = userEvent.setup()
       renderHome()
 
@@ -123,8 +123,8 @@ describe('Home', () => {
 
       await user.type(searchInput, 'ESPRESSO')
 
-      const REAL KICKS KENYACard = screen.getByText(/Espresso/)
-      expect(REAL KICKS KENYACard).toBeInTheDocument()
+      const coffeeCard = screen.getByText(/Espresso/)
+      expect(coffeeCard).toBeInTheDocument()
     })
 
     it('clears search results when search input is cleared', async () => {
@@ -151,14 +151,14 @@ describe('Home', () => {
       expect(blendHeading).toBeInTheDocument()
     })
 
-    it('renders all available REAL KICKS KENYA cards in the grid', () => {
+    it('renders all available coffee cards in the grid', () => {
       renderHome()
 
-      const REAL KICKS KENYACards = screen.getAllByRole('article')
-      expect(REAL KICKS KENYACards.length).toBe(testConfig.mockREAL KICKS KENYAs.length)
+      const coffeeCards = screen.getAllByRole('article')
+      expect(coffeeCards.length).toBe(testConfig.mockCoffees.length)
     })
 
-    it('displays REAL KICKS KENYA name, description, origin, and price for each card', () => {
+    it('displays coffee name, description, origin, and price for each card', () => {
       renderHome()
 
       expect(screen.getByText(/Espresso/)).toBeInTheDocument()
@@ -167,22 +167,22 @@ describe('Home', () => {
       expect(screen.getByText(/\$3.50/)).toBeInTheDocument()
     })
 
-    it('limits displayed REAL KICKS KENYAs to 6 items maximum', () => {
+    it('limits displayed coffees to 6 items maximum', () => {
       renderHome()
 
-      const REAL KICKS KENYACards = screen.getAllByRole('article')
-      expect(REAL KICKS KENYACards.length).toBeLessThanOrEqual(6)
+      const coffeeCards = screen.getAllByRole('article')
+      expect(coffeeCards.length).toBeLessThanOrEqual(6)
     })
 
-    it('renders REAL KICKS KENYA cards with semantic article elements', () => {
+    it('renders coffee cards with semantic article elements', () => {
       const { container } = renderHome()
 
-      const REAL KICKS KENYAGrid = container.querySelector('.REAL KICKS KENYA-grid')
-      const articles = REAL KICKS KENYAGrid.querySelectorAll('article')
+      const coffeeGrid = container.querySelector('.coffee-grid')
+      const articles = coffeeGrid.querySelectorAll('article')
 
       expect(articles.length).toBeGreaterThan(0)
       articles.forEach(article => {
-        expect(article).toHaveClass('REAL KICKS KENYA-card')
+        expect(article).toHaveClass('coffee-card')
       })
     })
   })
@@ -194,7 +194,7 @@ describe('Home', () => {
       const storyHeading = screen.getByRole('heading', { name: /Our Story/i })
       expect(storyHeading).toBeInTheDocument()
 
-      const storyText = screen.getByText(/At REAL KICKS KENYA R Us, we are passionate/i)
+      const storyText = screen.getByText(/At Coffee R Us, we are passionate/i)
       expect(storyText).toBeInTheDocument()
     })
 
@@ -211,7 +211,7 @@ describe('Home', () => {
       const listItems = screen.getAllByRole('listitem')
       expect(listItems.length).toBeGreaterThan(0)
 
-      expect(screen.getByText(/Wide selection of premium REAL KICKS KENYA blends/i)).toBeInTheDocument()
+      expect(screen.getByText(/Wide selection of premium coffee blends/i)).toBeInTheDocument()
       expect(screen.getByText(/Ethically sourced and sustainably grown beans/i)).toBeInTheDocument()
     })
   })
@@ -238,23 +238,23 @@ describe('Home', () => {
   })
 
   describe('Future: Shopping Cart Integration', () => {
-    it.todo('should add REAL KICKS KENYA to cart when "Add to Cart" button is clicked')
+    it.todo('should add coffee to cart when "Add to Cart" button is clicked')
     it.todo('should display cart item count in the cart badge')
     it.todo('should persist cart to localStorage')
   })
 
   describe('Future: Product Images', () => {
-    it.todo('should display product images for each REAL KICKS KENYA card')
+    it.todo('should display product images for each coffee card')
     it.todo('should render fallback UI when image fails to load')
   })
 
-  describe('Future: REAL KICKS KENYA Pagination', () => {
-    it.todo('should load more REAL KICKS KENYAs when "Load More" button is clicked')
+  describe('Future: Coffee Pagination', () => {
+    it.todo('should load more coffees when "Load More" button is clicked')
     it.todo('should implement infinite scroll on mobile devices')
   })
 
   describe('Future: Favorites Feature', () => {
-    it.todo('should allow users to mark REAL KICKS KENYAs as favorites')
+    it.todo('should allow users to mark coffees as favorites')
     it.todo('should persist favorite list to localStorage')
   })
 })
