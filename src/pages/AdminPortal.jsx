@@ -21,18 +21,13 @@ export default function AdminPortal() {
       setMessage('Please fill in every field.')
       return
     }
-    
-    
     const newKick = {
       ...form,
       image: form.image || 'https://via.placeholder.com/400x400?text=New+Kick'
     }
-    
     addKick(newKick)
     setForm(initialForm)
     setMessage('Kick model added successfully.')
-    
-    
     setTimeout(() => setMessage(''), 3000)
   }
 
@@ -70,25 +65,22 @@ export default function AdminPortal() {
 
       <div className="admin-summary">
         <h3>Current Kicks ({kicks.length})</h3>
-        <div className="coffee-grid admin-grid">
+        <div className="admin-grid">
           {kicks.map(kick => (
-            <div key={kick.id} className="coffee-card small-card">
-              {}
-              <div className="admin-kick-image">
-                <img 
-                  src={kick.image || 'https://via.placeholder.com/60x60?text=No+Img'} 
+            <div key={kick.id} className="kicks-card">
+              <div className="kick-image-container">
+                <img
+                  className="kick-image"
+                  src={kick.image || 'https://via.placeholder.com/400x400?text=No+Img'}
                   alt={kick.name}
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = 'https://via.placeholder.com/60x60?text=Error';
-                  }}
+                  onError={e => { e.target.onerror = null; e.target.src = 'https://via.placeholder.com/400x400?text=Error' }}
                 />
               </div>
-              <div className="admin-kick-info">
-                <p className="admin-kick-name">{kick.name}</p>
-                <span className="admin-kick-origin">{kick.origin}</span>
-                <strong className="admin-kick-price">${kick.price}</strong>
-              </div>
+              <h3>{kick.name}</h3>
+              <p>{kick.description}</p>
+              <span>{kick.origin}</span>
+              <strong>${kick.price}</strong>
+              <button className="add-to-cart-btn">Add to Cart</button>
             </div>
           ))}
         </div>
