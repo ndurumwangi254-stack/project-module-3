@@ -63,6 +63,22 @@
       "description": "balance all way",
       "image": "https://images.footlocker.com/is/image/EBFL2/U9060BPM?wid=250&hei=250",
       "id": "v0v0YKQyrI0"
+    },
+    {
+      "name": "Autum",
+      "origin": "Kenya",
+      "price": "6.50",
+      "description": "wome sport shoes",
+      "image": "https://img.joomcdn.net/d92825177f5454066927348fc2a2c9f45faceeb0_original.jpeg",
+      "id": "lbAug8ijAy0"
+    },
+    {
+      "name": "Vans",
+      "origin": "Kenya",
+      "price": "7.50",
+      "description": "Skate shoes",
+      "image": "https://assets.vans.com/image/upload/c_limit,w_1080/q_auto:best,f_auto:image,d_na.png/v1775259918/SP26_04092026_LP_Womens_LinkedCards-All-Up-01-01_Mobile_193x227_Image",
+      "id": "tAYT7_h0SHA"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
