@@ -1,23 +1,23 @@
 import usePageTitle from '../hooks/usePageTitle'
-import { useCoffeeContext } from '../context/CoffeeContext'
+import { useKicksContext } from '../context/KicksContext'
 
 export default function Shop() {
   usePageTitle('Shop')
-  const { coffees } = useCoffeeContext()
+  const { kicks } = useKicksContext()
 
   return (
     <section className="shop-page">
       <div className="section-card">
-        <h2>Shop our coffee menu</h2>
-        <p>Discover fresh, roasted blends from around the world.</p>
+        <h2>Shop our kick models</h2>
+        <p>Discover authentic, stylish footwear from around the world.</p>
       </div>
       <div className="coffee-grid shop-grid">
-        {coffees.map(coffee => (
-          <article key={coffee.id} className="coffee-card">
-            <h3>{coffee.name}</h3>
-            <p>{coffee.description}</p>
-            <span>{coffee.origin}</span>
-            <strong>${coffee.price}</strong>
+        {kicks.map(kick => (
+          <article key={kick.id} className="coffee-card">
+            <h3>{kick.name}</h3>
+            <p>{kick.description}</p>
+            <span>{kick.origin}</span>
+            <strong>${kick.price}</strong>
           </article>
         ))}
       </div>
