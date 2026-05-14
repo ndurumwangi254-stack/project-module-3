@@ -468,265 +468,6 @@ body::after {
 .info-card li:hover { color: var(--cyan); padding-left: 8px; }
 .info-card li:last-child { border-bottom: none; }
 
-/* ── REAL KICKS KENYA CARDS ── */
-.REAL KICKS KENYA-grid {
-  display: grid;
-  gap: 18px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.REAL KICKS KENYA-card {
-  position: relative;
-  background: rgba(123, 53, 212, 0.04);
-  border: 1px solid rgba(123, 53, 212, 0.18);
-  border-radius: 20px;
-  padding: 24px;
-  min-height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-  transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: default;
-  backdrop-filter: blur(14px);
-}
-
-.REAL KICKS KENYA-card::before {
-  content: '';
-  position: absolute;
-  top: -1px; left: -1px; right: -1px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--pink-bright), var(--cyan), transparent);
-  background-size: 200% 100%;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.45s ease;
-}
-
-.REAL KICKS KENYA-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0; right: 0;
-  width: 80px; height: 80px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(240,48,160,0.18), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  transform: translate(20px, 20px);
-}
-
-.REAL KICKS KENYA-card:hover {
-  transform: translateY(-6px) scale(1.015);
-  border-color: rgba(240, 48, 160, 0.4);
-  box-shadow:
-    0 24px 60px rgba(0,0,0,0.5),
-    0 0 0 1px rgba(240, 48, 160, 0.15),
-    0 0 40px rgba(123, 53, 212, 0.2),
-    0 0 60px rgba(240, 48, 160, 0.08);
-}
-.REAL KICKS KENYA-card:hover::before { transform: scaleX(1); }
-.REAL KICKS KENYA-card:hover::after  { opacity: 1; transform: translate(10px, 10px); }
-
-.REAL KICKS KENYA-card h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0 0 12px;
-  letter-spacing: 0.02em;
-}
-
-.REAL KICKS KENYA-card p {
-  color: var(--text-secondary);
-  line-height: 1.75;
-  flex-grow: 1;
-  font-size: 0.9rem;
-  font-weight: 300;
-}
-
-.REAL KICKS KENYA-card span {
-  display: block;
-  margin-bottom: 12px;
-  color: rgba(123, 53, 212, 0.8);
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 700;
-}
-
-.REAL KICKS KENYA-card strong {
-  font-size: 1.2rem;
-  font-weight: 800;
-  background: linear-gradient(90deg, var(--pink-bright), var(--cyan));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ── SECTION CARD ── */
-.section-card p {
-  color: var(--text-secondary);
-  max-width: 44rem;
-  line-height: 1.8;
-  font-weight: 300;
-}
-
-/* ── SHOP ── */
-.shop-page { display: grid; gap: 24px; }
-.shop-grid { grid-template-columns: repeat(3, minmax(220px, 1fr)); }
-
-/* ── ADMIN ── */
-.admin-page { display: grid; gap: 24px; justify-items: center; }
-
-.admin-card {
-  max-width: 520px;
-  width: 100%;
-  border-color: rgba(240, 48, 160, 0.2);
-  box-shadow:
-    0 40px 80px rgba(0,0,0,0.55),
-    0 0 60px rgba(123, 53, 212, 0.15),
-    inset 0 1px 0 rgba(255,255,255,0.06);
-}
-
-.admin-intro {
-  color: var(--text-secondary);
-  margin: 0 0 28px;
-  line-height: 1.75;
-  font-size: 0.9rem;
-}
-
-.admin-form { display: grid; gap: 20px; }
-
-.admin-form label {
-  display: grid;
-  gap: 8px;
-  color: rgba(255, 95, 207, 0.8);
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.admin-form input {
-  background: rgba(0,0,0,0.4);
-  border: 1px solid rgba(123, 53, 212, 0.3);
-  border-radius: 14px;
-  color: var(--text-primary);
-  padding: 14px 18px;
-  font-size: 0.95rem;
-  font-family: inherit;
-  outline: none;
-  transition: all 0.28s ease;
-}
-
-.admin-form input:focus {
-  border-color: var(--pink);
-  box-shadow: 0 0 0 3px rgba(240,48,160,0.2), 0 0 30px rgba(240,48,160,0.1);
-  background: rgba(0,0,0,0.55);
-}
-
-.admin-form button {
-  position: relative;
-  padding: 16px 20px;
-  border: none;
-  border-radius: 14px;
-  font-weight: 900;
-  font-size: 0.88rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-family: inherit;
-  color: #fff;
-  background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 60%, var(--pink-bright) 100%);
-  background-size: 200% auto;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow:
-    0 0 30px rgba(240, 48, 160, 0.4),
-    0 6px 24px rgba(0,0,0,0.3),
-    inset 0 1px 0 rgba(255,255,255,0.15);
-  overflow: hidden;
-}
-
-.admin-form button::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 55%);
-  border-radius: inherit;
-}
-
-.admin-form button:hover {
-  transform: translateY(-2px);
-  background-position: right center;
-  animation: pulse-ring 1s ease infinite;
-}
-
-.admin-form button:active { transform: translateY(0px) scale(0.98); }
-
-.message {
-  color: rgba(0, 229, 255, 0.9);
-  font-size: 0.9rem;
-  padding: 12px 16px;
-  background: rgba(0, 229, 255, 0.06);
-  border: 1px solid rgba(0, 229, 255, 0.2);
-  border-radius: 12px;
-}
-
-/* ── ADMIN SUMMARY ── */
-.admin-summary {
-  width: min(100%, 980px);
-  background:
-    radial-gradient(ellipse at top left, rgba(123,53,212,0.08) 0%, transparent 50%),
-    var(--glass-bg);
-  border-color: rgba(240, 48, 160, 0.15);
-}
-
-.admin-grid {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  margin-top: 18px;
-}
-
-.admin-grid .REAL KICKS KENYA-card { min-height: auto; padding: 18px; }
-
-.empty-state {
-  color: rgba(220, 190, 255, 0.35);
-  font-size: 0.9rem;
-  font-style: italic;
-}
-
-/* ── SCROLLBAR ── */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, var(--purple), var(--pink));
-  border-radius: 3px;
-}
-
-/* ── SELECTION ── */
-::selection { background: rgba(240, 48, 160, 0.4); color: #fff; }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 960px) {
-  .home-lower { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 720px) {
-  .app-shell { padding: 16px; gap: 18px; }
-  .navbar { flex-direction: column; gap: 14px; padding: 18px 20px; }
-  .nav-links { flex-wrap: wrap; justify-content: center; gap: 4px; }
-  .hero-card { padding: 44px 24px; min-height: 280px; animation: none; }
-  .hero-card h1 { letter-spacing: 0.07em; }
-  .sidebar-card { order: 2; }
-  .REAL KICKS KENYA-card:hover { transform: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.15s !important;
-  }
-}
 /* ── KICKS GRID & CARDS ── */
 .kicks-grid {
   display: grid;
@@ -857,3 +598,184 @@ body::after {
   transition: background 0.2s;
 }
 .checkout-btn:hover { background: var(--pink-bright); }
+
+/* ── ADMIN ── */
+.admin-page { display: grid; gap: 24px; justify-items: center; }
+
+.admin-card {
+  max-width: 520px;
+  width: 100%;
+  border-color: rgba(240, 48, 160, 0.2);
+  box-shadow:
+    0 40px 80px rgba(0,0,0,0.55),
+    0 0 60px rgba(123, 53, 212, 0.15),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.admin-intro {
+  color: var(--text-secondary);
+  margin: 0 0 28px;
+  line-height: 1.75;
+  font-size: 0.9rem;
+}
+
+.admin-form { display: grid; gap: 20px; }
+
+.admin-form label {
+  display: grid;
+  gap: 8px;
+  color: rgba(255, 95, 207, 0.8);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.admin-form input {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(123, 53, 212, 0.3);
+  border-radius: 14px;
+  color: var(--text-primary);
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.28s ease;
+}
+
+.admin-form input:focus {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 3px rgba(240,48,160,0.2), 0 0 30px rgba(240,48,160,0.1);
+  background: rgba(0,0,0,0.55);
+}
+
+.admin-form button {
+  position: relative;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 14px;
+  font-weight: 900;
+  font-size: 0.88rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: inherit;
+  color: #fff;
+  background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 60%, var(--pink-bright) 100%);
+  background-size: 200% auto;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 0 30px rgba(240, 48, 160, 0.4),
+    0 6px 24px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.15);
+  overflow: hidden;
+}
+
+.admin-form button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 55%);
+  border-radius: inherit;
+}
+
+.admin-form button:hover {
+  transform: translateY(-2px);
+  background-position: right center;
+  animation: pulse-ring 1s ease infinite;
+}
+
+.admin-form button:active { transform: translateY(0px) scale(0.98); }
+
+.message {
+  color: rgba(0, 229, 255, 0.9);
+  font-size: 0.9rem;
+  padding: 12px 16px;
+  background: rgba(0, 229, 255, 0.06);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 12px;
+}
+
+.admin-summary {
+  width: min(100%, 980px);
+  background:
+    radial-gradient(ellipse at top left, rgba(123,53,212,0.08) 0%, transparent 50%),
+    var(--glass-bg);
+  border-color: rgba(240, 48, 160, 0.15);
+}
+
+.admin-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  margin-top: 18px;
+}
+
+.empty-state {
+  color: rgba(220, 190, 255, 0.35);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--purple), var(--pink));
+  border-radius: 3px;
+}
+
+/* ── SELECTION ── */
+::selection { background: rgba(240, 48, 160, 0.4); color: #fff; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .home-lower { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .app-shell { padding: 16px; gap: 18px; }
+  .navbar { flex-direction: column; gap: 14px; padding: 18px 20px; }
+  .nav-links { flex-wrap: wrap; justify-content: center; gap: 4px; }
+  .hero-card { padding: 44px 24px; min-height: 280px; animation: none; }
+  .hero-card h1 { letter-spacing: 0.07em; }
+  .sidebar-card { order: 2; }
+  .kicks-card:hover { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.15s !important;
+  }
+}
+
+/* ── KICK IMAGES ONLY ── */
+.kick-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  margin: -20px -20px 16px -20px;
+  width: calc(100% + 40px);
+  position: relative;
+  background: linear-gradient(135deg, rgba(123, 53, 212, 0.2), rgba(240, 48, 160, 0.1));
+  flex-shrink: 0;
+}
+
+.kick-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.kicks-card:hover .kick-image {
+  transform: scale(1.05);
+}
+
+.kicks-card {
+  overflow: hidden;
+}
+  
