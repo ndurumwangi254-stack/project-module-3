@@ -55,9 +55,9 @@ export default function AdminPortal() {
 
       <div className="admin-summary">
         <h3>Current Kicks</h3>
-        <div className="coffee-grid admin-grid">
+        <div className="REAL KICKS KENYA-grid admin-grid">
           {kicks.map(kick => (
-            <div key={kick.id} className="coffee-card small-card">
+            <div key={kick.id} className="REAL KICKS KENYA-card small-card">
               <p>{kick.name}</p>
               <span>{kick.origin}</span>
               <strong>${kick.price}</strong>

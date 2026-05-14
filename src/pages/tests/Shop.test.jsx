@@ -1,14 +1,14 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, beforeEach, afterEach, expect } from 'vitest'
 import Shop from '../Shop'
-import { CoffeeProvider } from '../../context/CoffeeContext'
+import { REAL KICKS KENYAProvider } from '../../context/REAL KICKS KENYAContext'
 import { testConfig } from '../../tests/config'
 
 const renderShop = () => {
   return render(
-    <CoffeeProvider>
+    <REAL KICKS KENYAProvider>
       <Shop />
-    </CoffeeProvider>
+    </REAL KICKS KENYAProvider>
   )
 }
 
@@ -20,10 +20,10 @@ describe('Shop', () => {
   })
 
   describe('Shop Header Section', () => {
-    it('renders the "Shop our coffee menu" heading', () => {
+    it('renders the "Shop our REAL KICKS KENYA menu" heading', () => {
       renderShop()
 
-      const heading = screen.getByRole('heading', { level: 2, name: /Shop our coffee menu/i })
+      const heading = screen.getByRole('heading', { level: 2, name: /Shop our REAL KICKS KENYA menu/i })
       expect(heading).toBeInTheDocument()
     })
 
@@ -42,59 +42,59 @@ describe('Shop', () => {
     })
   })
 
-  describe('Coffee Grid Display', () => {
-    it('renders all available coffee products in the grid', () => {
+  describe('REAL KICKS KENYA Grid Display', () => {
+    it('renders all available REAL KICKS KENYA products in the grid', () => {
       renderShop()
 
-      const coffeeCards = screen.getAllByRole('article')
-      expect(coffeeCards.length).toBe(testConfig.mockCoffees.length)
+      const REAL KICKS KENYACards = screen.getAllByRole('article')
+      expect(REAL KICKS KENYACards.length).toBe(testConfig.mockREAL KICKS KENYAs.length)
     })
 
-    it('displays coffee name in each card', () => {
+    it('displays REAL KICKS KENYA name in each card', () => {
       renderShop()
 
-      testConfig.mockCoffees.forEach(coffee => {
-        const coffeeNameElement = screen.getByText(coffee.name)
-        expect(coffeeNameElement).toBeInTheDocument()
+      testConfig.mockREAL KICKS KENYAs.forEach(REAL KICKS KENYA => {
+        const REAL KICKS KENYANameElement = screen.getByText(REAL KICKS KENYA.name)
+        expect(REAL KICKS KENYANameElement).toBeInTheDocument()
       })
     })
 
-    it('displays coffee description in each card', () => {
+    it('displays REAL KICKS KENYA description in each card', () => {
       renderShop()
 
-      testConfig.mockCoffees.forEach(coffee => {
-        const descriptionElement = screen.getByText(coffee.description)
+      testConfig.mockREAL KICKS KENYAs.forEach(REAL KICKS KENYA => {
+        const descriptionElement = screen.getByText(REAL KICKS KENYA.description)
         expect(descriptionElement).toBeInTheDocument()
       })
     })
 
-    it('displays coffee origin in each card', () => {
+    it('displays REAL KICKS KENYA origin in each card', () => {
       renderShop()
 
-      testConfig.mockCoffees.forEach(coffee => {
-        const originElement = screen.getByText(coffee.origin)
+      testConfig.mockREAL KICKS KENYAs.forEach(REAL KICKS KENYA => {
+        const originElement = screen.getByText(REAL KICKS KENYA.origin)
         expect(originElement).toBeInTheDocument()
       })
     })
 
-    it('displays coffee price in each card with dollar sign', () => {
+    it('displays REAL KICKS KENYA price in each card with dollar sign', () => {
       renderShop()
 
-      testConfig.mockCoffees.forEach(coffee => {
-        const pricePattern = new RegExp(`\\$${coffee.price}`)
+      testConfig.mockREAL KICKS KENYAs.forEach(REAL KICKS KENYA => {
+        const pricePattern = new RegExp(`\\$${REAL KICKS KENYA.price}`)
         const priceElement = screen.getByText(pricePattern)
         expect(priceElement).toBeInTheDocument()
       })
     })
 
-    it('renders coffee cards with semantic article elements', () => {
+    it('renders REAL KICKS KENYA cards with semantic article elements', () => {
       const { container } = renderShop()
 
-      const coffeeGrid = container.querySelector('.coffee-grid.shop-grid')
-      expect(coffeeGrid).toBeInTheDocument()
+      const REAL KICKS KENYAGrid = container.querySelector('.REAL KICKS KENYA-grid.shop-grid')
+      expect(REAL KICKS KENYAGrid).toBeInTheDocument()
 
-      const articles = coffeeGrid.querySelectorAll('article.coffee-card')
-      expect(articles.length).toBe(testConfig.mockCoffees.length)
+      const articles = REAL KICKS KENYAGrid.querySelectorAll('article.REAL KICKS KENYA-card')
+      expect(articles.length).toBe(testConfig.mockREAL KICKS KENYAs.length)
     })
 
     it('applies shop-grid class for 3-column layout', () => {
@@ -102,7 +102,7 @@ describe('Shop', () => {
 
       const shopGrid = container.querySelector('.shop-grid')
       expect(shopGrid).toBeInTheDocument()
-      expect(shopGrid).toHaveClass('coffee-grid')
+      expect(shopGrid).toHaveClass('REAL KICKS KENYA-grid')
       expect(shopGrid).toHaveClass('shop-grid')
     })
   })
@@ -123,11 +123,11 @@ describe('Shop', () => {
 
       expect(children[0]).toHaveClass('section-card')
 
-      expect(children[1]).toHaveClass('coffee-grid')
+      expect(children[1]).toHaveClass('REAL KICKS KENYA-grid')
     })
   })
 
-  describe('Individual Coffee Card Content', () => {
+  describe('Individual REAL KICKS KENYA Card Content', () => {
     it('displays all required information for Espresso card', () => {
       renderShop()
 
@@ -154,10 +154,10 @@ describe('Shop', () => {
   })
 
   describe('Accessibility', () => {
-    it('uses semantic article elements for coffee cards', () => {
+    it('uses semantic article elements for REAL KICKS KENYA cards', () => {
       const { container } = renderShop()
 
-      const articles = container.querySelectorAll('article.coffee-card')
+      const articles = container.querySelectorAll('article.REAL KICKS KENYA-card')
       expect(articles.length).toBeGreaterThan(0)
 
       articles.forEach(article => {
@@ -178,15 +178,15 @@ describe('Shop', () => {
   })
 
   describe('Future: Product Images', () => {
-    it.todo('should render product image for each coffee')
+    it.todo('should render product image for each REAL KICKS KENYA')
     it.todo('should display broken image fallback when image src fails')
     it.todo('should have descriptive alt text for each image')
   })
 
   describe('Future: Shopping Cart Integration', () => {
-    it.todo('should display "Add to Cart" button on each coffee card')
+    it.todo('should display "Add to Cart" button on each REAL KICKS KENYA card')
     it.todo('should show quantity selector for adding multiple items')
-    it.todo('should add coffee to cart when button is clicked')
+    it.todo('should add REAL KICKS KENYA to cart when button is clicked')
     it.todo('should show confirmation message after adding to cart')
   })
 

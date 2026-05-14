@@ -468,14 +468,14 @@ body::after {
 .info-card li:hover { color: var(--cyan); padding-left: 8px; }
 .info-card li:last-child { border-bottom: none; }
 
-/* ── COFFEE CARDS ── */
-.coffee-grid {
+/* ── REAL KICKS KENYA CARDS ── */
+.REAL KICKS KENYA-grid {
   display: grid;
   gap: 18px;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-.coffee-card {
+.REAL KICKS KENYA-card {
   position: relative;
   background: rgba(123, 53, 212, 0.04);
   border: 1px solid rgba(123, 53, 212, 0.18);
@@ -491,7 +491,7 @@ body::after {
   backdrop-filter: blur(14px);
 }
 
-.coffee-card::before {
+.REAL KICKS KENYA-card::before {
   content: '';
   position: absolute;
   top: -1px; left: -1px; right: -1px;
@@ -503,7 +503,7 @@ body::after {
   transition: transform 0.45s ease;
 }
 
-.coffee-card::after {
+.REAL KICKS KENYA-card::after {
   content: '';
   position: absolute;
   bottom: 0; right: 0;
@@ -515,7 +515,7 @@ body::after {
   transform: translate(20px, 20px);
 }
 
-.coffee-card:hover {
+.REAL KICKS KENYA-card:hover {
   transform: translateY(-6px) scale(1.015);
   border-color: rgba(240, 48, 160, 0.4);
   box-shadow:
@@ -524,10 +524,10 @@ body::after {
     0 0 40px rgba(123, 53, 212, 0.2),
     0 0 60px rgba(240, 48, 160, 0.08);
 }
-.coffee-card:hover::before { transform: scaleX(1); }
-.coffee-card:hover::after  { opacity: 1; transform: translate(10px, 10px); }
+.REAL KICKS KENYA-card:hover::before { transform: scaleX(1); }
+.REAL KICKS KENYA-card:hover::after  { opacity: 1; transform: translate(10px, 10px); }
 
-.coffee-card h3 {
+.REAL KICKS KENYA-card h3 {
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -535,7 +535,7 @@ body::after {
   letter-spacing: 0.02em;
 }
 
-.coffee-card p {
+.REAL KICKS KENYA-card p {
   color: var(--text-secondary);
   line-height: 1.75;
   flex-grow: 1;
@@ -543,7 +543,7 @@ body::after {
   font-weight: 300;
 }
 
-.coffee-card span {
+.REAL KICKS KENYA-card span {
   display: block;
   margin-bottom: 12px;
   color: rgba(123, 53, 212, 0.8);
@@ -553,7 +553,7 @@ body::after {
   font-weight: 700;
 }
 
-.coffee-card strong {
+.REAL KICKS KENYA-card strong {
   font-size: 1.2rem;
   font-weight: 800;
   background: linear-gradient(90deg, var(--pink-bright), var(--cyan));
@@ -687,7 +687,7 @@ body::after {
   margin-top: 18px;
 }
 
-.admin-grid .coffee-card { min-height: auto; padding: 18px; }
+.admin-grid .REAL KICKS KENYA-card { min-height: auto; padding: 18px; }
 
 .empty-state {
   color: rgba(220, 190, 255, 0.35);
@@ -718,7 +718,7 @@ body::after {
   .hero-card { padding: 44px 24px; min-height: 280px; animation: none; }
   .hero-card h1 { letter-spacing: 0.07em; }
   .sidebar-card { order: 2; }
-  .coffee-card:hover { transform: none; }
+  .REAL KICKS KENYA-card:hover { transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

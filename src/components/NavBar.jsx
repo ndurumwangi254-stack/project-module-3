@@ -9,7 +9,7 @@ const links = [
 export default function Navbar() {    
   return (
     <nav className="navbar">
-      <div className="brand">Coffee R Us</div>
+      <div className="brand">REAL KICKS KENYA</div>
       <div className="nav-links">
         {links.map(link => (
           <NavLink key={link.to} to={link.to} className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>

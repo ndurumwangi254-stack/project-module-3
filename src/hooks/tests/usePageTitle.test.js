@@ -17,7 +17,7 @@ describe('usePageTitle', () => {
   it('updates document title with the provided title parameter', () => {
     renderHook(() => usePageTitle('Home'))
     
-    expect(document.title).toBe('Coffee R Us | Home')
+    expect(document.title).toBe('REAL KICKS KENYA R Us | Home')
   })
 
   it('updates document title when the title prop changes', () => {
@@ -26,17 +26,17 @@ describe('usePageTitle', () => {
       { initialProps: { title: 'Home' } }
     )
 
-    expect(document.title).toBe('Coffee R Us | Home')
+    expect(document.title).toBe('REAL KICKS KENYA R Us | Home')
 
     rerender({ title: 'Shop' })
 
-    expect(document.title).toBe('Coffee R Us | Shop')
+    expect(document.title).toBe('REAL KICKS KENYA R Us | Shop')
   })
 
   it('sets the correct format with brand name and title', () => {
     renderHook(() => usePageTitle('Admin Portal'))
 
-    expect(document.title).toMatch(/Coffee R Us \| Admin Portal/)
+    expect(document.title).toMatch(/REAL KICKS KENYA R Us \| Admin Portal/)
   })
 
   describe('Future: Special character handling', () => {

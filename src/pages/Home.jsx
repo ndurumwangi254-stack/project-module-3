@@ -36,10 +36,10 @@ export default function Home() {
 
         <div className="featured">
           <h2>Popular Kicks</h2>
-          <div className="coffee-grid">
+          <div className="REAL KICKS KENYA-grid">
             {filteredKicks.length > 0 ? (
               filteredKicks.slice(0, 6).map(kick => (
-                <article key={kick.id} className="coffee-card">
+                <article key={kick.id} className="REAL KICKS KENYA-card">
                   <h3>{kick.name}</h3>
                   <p>{kick.description}</p>
                   <span>{kick.origin}</span>

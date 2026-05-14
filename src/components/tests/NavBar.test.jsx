@@ -25,10 +25,10 @@ describe('NavBar', () => {
   afterEach(() => {
   })
 
-  it('renders the brand name "Coffee R Us"', () => {
+  it('renders the brand name "REAL KICKS KENYA R Us"', () => {
     renderNavbar()
 
-    const brandElement = screen.getByText('Coffee R Us')
+    const brandElement = screen.getByText('REAL KICKS KENYA R Us')
     expect(brandElement).toBeInTheDocument()
     expect(brandElement).toHaveClass('brand')
   })
