@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import usePageTitle from '../hooks/usePageTitle'
-import { useCoffeeContext } from '../context/CoffeeContext'
+import { useKicksContext } from '../context/KicksContext'
 
 const initialForm = { name: '', origin: '', price: '', description: '' }
 
 export default function AdminPortal() {
   usePageTitle('Admin Portal')
-  const { addCoffee, coffees } = useCoffeeContext()
+  const { addKick, kicks } = useKicksContext()
   const [form, setForm] = useState(initialForm)
   const [message, setMessage] = useState('')
 
@@ -21,20 +21,20 @@ export default function AdminPortal() {
       setMessage('Please fill in every field.')
       return
     }
-    addCoffee(form)
+    addKick(form)
     setForm(initialForm)
-    setMessage('Coffee blend added successfully.')
+    setMessage('Kick model added successfully.')
   }
 
   return (
     <section className="admin-page">
       <div className="admin-card">
         <h2>Admin Portal</h2>
-        <p className="admin-intro">Add new coffee blends and manage the current menu.</p>
+        <p className="admin-intro">Add new kick models and manage the current inventory.</p>
         <form className="admin-form" onSubmit={handleSubmit}>
           <label>
-            Coffee Name
-            <input name="name" value={form.name} onChange={handleChange} placeholder="Espresso" />
+            Kick Name
+            <input name="name" value={form.name} onChange={handleChange} placeholder="Air Max" />
           </label>
           <label>
             Origin
@@ -42,11 +42,11 @@ export default function AdminPortal() {
           </label>
           <label>
             Price
-            <input name="price" value={form.price} onChange={handleChange} placeholder="4.99" />
+            <input name="price" value={form.price} onChange={handleChange} placeholder="3000Ksh" />
           </label>
           <label>
             Description
-            <input name="description" value={form.description} onChange={handleChange} placeholder="Smooth and sweet" />
+            <input name="description" value={form.description} onChange={handleChange} placeholder="Stylish and Comfortable" />
           </label>
           <button type="submit">Save</button>
           {message && <p className="message">{message}</p>}
@@ -54,13 +54,13 @@ export default function AdminPortal() {
       </div>
 
       <div className="admin-summary">
-        <h3>Current roasts</h3>
+        <h3>Current Kicks</h3>
         <div className="coffee-grid admin-grid">
-          {coffees.map(coffee => (
-            <div key={coffee.id} className="coffee-card small-card">
-              <p>{coffee.name}</p>
-              <span>{coffee.origin}</span>
-              <strong>${coffee.price}</strong>
+          {kicks.map(kick => (
+            <div key={kick.id} className="coffee-card small-card">
+              <p>{kick.name}</p>
+              <span>{kick.origin}</span>
+              <strong>${kick.price}</strong>
             </div>
           ))}
         </div>
