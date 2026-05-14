@@ -1,54 +1,32 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useState, useEffect } from 'react'
 
 const KicksContext = createContext(null)
 
-const initialKicks = [
-  { 
-    id: 1, 
-    name: 'Nike - Air Max', 
-    description: 'Stylish and Comfortable', 
-    origin: 'Italy', 
-    price: '3.50',
-    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop'
-  },
-  { 
-    id: 2, 
-    name: 'Nike - Air Jordan', 
-    description: 'Iconic basketball shoe', 
-    origin: 'USA', 
-    price: '4.25',
-    image: 'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=400&h=400&fit=crop'
-  },
-  { 
-    id: 3, 
-    name: 'Adidas - Samba', 
-    description: 'Classic leather sneaker', 
-    origin: 'Colombia', 
-    price: '4.75',
-    image: 'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=400&fit=crop'
-  },
-  { 
-    id: 4, 
-    name: 'Adidas - Ultraboost', 
-    description: 'High-performance running shoe', 
-    origin: 'Brazil', 
-    price: '5.00',
-    image: 'https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400&h=400&fit=crop'
-  }
-]
+const API = 'http://localhost:3001/kicks'
 
 export function KicksProvider({ children }) {
-  const [kicks, setKicks] = useState(initialKicks)
+  const [kicks, setKicks] = useState([])
   const [cart, setCart] = useState([])
 
+  // Fetch kicks on load
+  useEffect(() => {
+    fetch(API)
+      .then(res => res.json())
+      .then(data => setKicks(data))
+  }, [])
+
   function addKick(newKick) {
-    // Make sure to include the image property
     const kickWithImage = {
       ...newKick,
-      id: Date.now(),
       image: newKick.image || 'https://via.placeholder.com/400x400?text=New+Kick'
     }
-    setKicks(prev => [...prev, kickWithImage])
+    fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(kickWithImage)
+    })
+      .then(res => res.json())
+      .then(saved => setKicks(prev => [...prev, saved]))
   }
 
   function addToCart(kick) {
@@ -76,15 +54,15 @@ export function KicksProvider({ children }) {
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0)
 
   return (
-    <KicksContext.Provider value={{ 
-      kicks, 
-      addKick, 
-      cart, 
-      addToCart, 
-      removeFromCart, 
-      updateQuantity, 
-      cartTotal, 
-      cartCount 
+    <KicksContext.Provider value={{
+      kicks,
+      addKick,
+      cart,
+      addToCart,
+      removeFromCart,
+      updateQuantity,
+      cartTotal,
+      cartCount
     }}>
       {children}
     </KicksContext.Provider>
