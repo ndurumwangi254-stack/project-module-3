@@ -23,6 +23,18 @@ export default function Shop() {
         <div className="kicks-grid shop-grid" style={{ flex: 1 }}>
           {kicks.map(kick => (
             <article key={kick.id} className="kicks-card">
+              {}
+              <div className="kick-image-container">
+                <img 
+                  src={kick.image || 'https://via.placeholder.com/400x400?text=No+Image'} 
+                  alt={kick.name}
+                  className="kick-image"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = 'https://via.placeholder.com/400x400?text=Image+Not+Found';
+                  }}
+                />
+              </div>
               <h3>{kick.name}</h3>
               <p>{kick.description}</p>
               <span>{kick.origin}</span>
@@ -43,7 +55,18 @@ export default function Shop() {
               <>
                 {cart.map(item => (
                   <div key={item.id} className="cart-item">
-                    <span>{item.name}</span>
+                    {}
+                    {item.image && (
+                      <img 
+                        src={item.image} 
+                        alt={item.name} 
+                        style={{ width: '40px', height: '40px', objectFit: 'cover', borderRadius: '6px' }}
+                      />
+                    )}
+                    <div style={{ flex: 1 }}>
+                      <span style={{ display: 'block', fontWeight: '500' }}>{item.name}</span>
+                      <small style={{ color: 'rgba(220,190,255,0.6)' }}>{item.origin}</small>
+                    </div>
                     <div className="cart-item-controls">
                       <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>-</button>
                       <span>{item.quantity}</span>

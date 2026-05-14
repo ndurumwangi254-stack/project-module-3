@@ -1,17 +1,32 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useState, useEffect } from 'react'
+
 const KicksContext = createContext(null)
-const initialKicks = [
-  { id: 1, name: 'Nike - Air Max', description: 'Stylish and Comfortable', origin: 'Italy', price: '3.50' },
-  { id: 2, name: 'Nike - Air Jordan', description: 'Iconic basketball shoe', origin: 'USA', price: '4.25' },
-  { id: 3, name: 'Adidas - Samba', description: 'Classic leather sneaker', origin: 'Colombia', price: '4.75' },
-  { id: 4, name: 'Adidas - Ultraboost', description: 'High-performance running shoe', origin: 'Brazil', price: '5.00' }
-]
+
+const API = 'http://localhost:3001/kicks'
+
 export function KicksProvider({ children }) {
-  const [kicks, setKicks] = useState(initialKicks)
+  const [kicks, setKicks] = useState([])
   const [cart, setCart] = useState([])
 
+  // Fetch kicks on load
+  useEffect(() => {
+    fetch(API)
+      .then(res => res.json())
+      .then(data => setKicks(data))
+  }, [])
+
   function addKick(newKick) {
-    setKicks(prev => [...prev, { ...newKick, id: Date.now() }])
+    const kickWithImage = {
+      ...newKick,
+      image: newKick.image || 'https://via.placeholder.com/400x400?text=New+Kick'
+    }
+    fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(kickWithImage)
+    })
+      .then(res => res.json())
+      .then(saved => setKicks(prev => [...prev, saved]))
   }
 
   function addToCart(kick) {
@@ -39,11 +54,21 @@ export function KicksProvider({ children }) {
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0)
 
   return (
-    <KicksContext.Provider value={{ kicks, addKick, cart, addToCart, removeFromCart, updateQuantity, cartTotal, cartCount }}>
+    <KicksContext.Provider value={{
+      kicks,
+      addKick,
+      cart,
+      addToCart,
+      removeFromCart,
+      updateQuantity,
+      cartTotal,
+      cartCount
+    }}>
       {children}
     </KicksContext.Provider>
   )
 }
+
 export function useKicksContext() {
   const context = useContext(KicksContext)
   if (!context) {
