@@ -21,18 +21,18 @@ export default function AdminPortal() {
       setMessage('Please fill in every field.')
       return
     }
-    
-    
+
     const newKick = {
       ...form,
       image: form.image || 'https://via.placeholder.com/400x400?text=New+Kick'
     }
+
     
     addKick(newKick)
     setForm(initialForm)
     setMessage('Kick model added successfully.')
     
-    
+
     setTimeout(() => setMessage(''), 3000)
   }
 
@@ -70,6 +70,7 @@ export default function AdminPortal() {
 
       <div className="admin-summary">
         <h3>Current Kicks ({kicks.length})</h3>
+
         <div className="coffee-grid admin-grid">
           {kicks.map(kick => (
             <div key={kick.id} className="coffee-card small-card">
@@ -89,6 +90,7 @@ export default function AdminPortal() {
                 <span className="admin-kick-origin">{kick.origin}</span>
                 <strong className="admin-kick-price">${kick.price}</strong>
               </div>
+
             </div>
           ))}
         </div>

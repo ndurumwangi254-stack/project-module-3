@@ -1,0 +1,85 @@
+{
+  "kicks": [
+    {
+      "id": "1",
+      "name": "Nike - Air Max",
+      "description": "Stylish and Comfortable",
+      "origin": "Italy",
+      "price": "3.50",
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "2",
+      "name": "Nike - Air Jordan",
+      "description": "Iconic basketball shoe",
+      "origin": "USA",
+      "price": "4.25",
+      "image": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "3",
+      "name": "Adidas - Samba",
+      "description": "Classic leather sneaker",
+      "origin": "Colombia",
+      "price": "4.75",
+      "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "4",
+      "name": "Adidas - Ultraboost",
+      "description": "High-performance running shoe",
+      "origin": "Brazil",
+      "price": "5.00",
+      "image": "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400&h=400&fit=crop"
+    },
+    {
+      "name": "FILA",
+      "origin": "Kenya",
+      "price": "6.50",
+      "description": "stylish and comfortable",
+      "image": "data:image/jpeg;base64,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",
+      "id": "hKNPYlW4JDE"
+    },
+    {
+      "name": "Puma",
+      "origin": "Kenya",
+      "price": "8.90",
+      "description": "HIgh-Tech",
+      "image": "https://cdn.outsideonline.com/wp-content/uploads/2025/04/PUMA-Fast-R-NITRO-Elite-3.png",
+      "id": "lFwSrmD8Hno"
+    },
+    {
+      "name": "Canvas",
+      "origin": "kenya",
+      "price": "5.50",
+      "description": "free and royalty",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ0UV8XMLEm8fHLM6cA7TAMH0BunmEC1TB-w&s",
+      "id": "CXfpcNsZ7Og"
+    },
+    {
+      "name": "New Balance",
+      "origin": "Kenya",
+      "price": "9.55",
+      "description": "balance all way",
+      "image": "https://images.footlocker.com/is/image/EBFL2/U9060BPM?wid=250&hei=250",
+      "id": "v0v0YKQyrI0"
+    },
+    {
+      "name": "Autum",
+      "origin": "Kenya",
+      "price": "6.50",
+      "description": "wome sport shoes",
+      "image": "https://img.joomcdn.net/d92825177f5454066927348fc2a2c9f45faceeb0_original.jpeg",
+      "id": "lbAug8ijAy0"
+    },
+    {
+      "name": "Vans",
+      "origin": "Kenya",
+      "price": "7.50",
+      "description": "Skate shoes",
+      "image": "https://assets.vans.com/image/upload/c_limit,w_1080/q_auto:best,f_auto:image,d_na.png/v1775259918/SP26_04092026_LP_Womens_LinkedCards-All-Up-01-01_Mobile_193x227_Image",
+      "id": "tAYT7_h0SHA"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
