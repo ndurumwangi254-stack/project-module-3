@@ -1,26 +1,26 @@
 import { useState } from 'react'
 import usePageTitle from '../hooks/usePageTitle'
-import { useCoffeeContext } from '../context/CoffeeContext'
+import { useKicksContext } from '../context/KicksContext'
 
 export default function Home() {
   usePageTitle('Home')
-  const { coffees } = useCoffeeContext()
+  const { kicks } = useKicksContext()
   const [search, setSearch] = useState('')
 
-  const filteredCoffees = coffees.filter(coffee => {
+  const filteredKicks = kicks.filter(kick => {
     const term = search.toLowerCase()
     return (
-      coffee.name.toLowerCase().includes(term) ||
-      coffee.description.toLowerCase().includes(term) ||
-      coffee.origin.toLowerCase().includes(term)
+      kick.name.toLowerCase().includes(term) ||
+      kick.description.toLowerCase().includes(term) ||
+      kick.origin.toLowerCase().includes(term)
     )
   })
 
   return (
     <section className="home-page">
       <div className="hero-card">
-        <h1>Coffee R Us</h1>
-        <p>The go-to store for your coffee needs.</p>
+        <h1>Real Kicks Kenya</h1>
+        <p>The go-to store for your kick needs.</p>
       </div>
 
       <div className="right-column">
@@ -30,24 +30,36 @@ export default function Home() {
             type="search"
             value={search}
             onChange={e => setSearch(e.target.value)}
-            placeholder="Search blends, origins, or flavours"
+            placeholder="Search kicks, origins, or styles..."
           />
         </div>
 
         <div className="featured">
-          <h2>Popular blends</h2>
-          <div className="coffee-grid">
-            {filteredCoffees.length > 0 ? (
-              filteredCoffees.slice(0, 6).map(coffee => (
-                <article key={coffee.id} className="coffee-card">
-                  <h3>{coffee.name}</h3>
-                  <p>{coffee.description}</p>
-                  <span>{coffee.origin}</span>
-                  <strong>${coffee.price}</strong>
+          <h2>Popular Kicks</h2>
+          <div className="kicks-grid">
+            {filteredKicks.length > 0 ? (
+              filteredKicks.slice(0, 6).map(kick => (
+                <article key={kick.id} className="kicks-card">
+                  {/* ADDED IMAGE HERE */}
+                  <div className="kick-image-container">
+                    <img 
+                      src={kick.image || 'https://via.placeholder.com/400x400?text=No+Image'} 
+                      alt={kick.name}
+                      className="kick-image"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = 'https://via.placeholder.com/400x400?text=Image+Error';
+                      }}
+                    />
+                  </div>
+                  <h3>{kick.name}</h3>
+                  <p>{kick.description}</p>
+                  <span>{kick.origin}</span>
+                  <strong>${kick.price}</strong>
                 </article>
               ))
             ) : (
-              <p className="empty-state">No coffees found. Try another search term.</p>
+              <p className="empty-state">No kicks found. Try another search term.</p>
             )}
           </div>
         </div>
@@ -57,16 +69,16 @@ export default function Home() {
         <div className="info-card">
           <h2>Our Story</h2>
           <p>
-            At Coffee R Us, we are passionate about bringing you the finest coffee blends from around the world. Our journey began with a simple love for coffee and a desire to share that love with others. We source our beans from sustainable farms, ensuring that every cup you enjoy supports ethical practices and quality craftsmanship.
+            At Real Kicks Kenya, we are passionate about bringing you the finest sneaker models from around the world. Our journey began with a simple love for kicks and a desire to share that love with others. We source our products from sustainable suppliers, ensuring that every pair you purchase supports ethical practices and quality craftsmanship.
           </p>
         </div>
 
         <div className="info-card">
           <h2>Why Choose Us?</h2>
           <ul>
-            <li>Wide selection of premium coffee blends</li>
-            <li>Ethically sourced and sustainably grown beans</li>
-            <li>Expertly roasted for maximum flavor</li>
+            <li>Wide selection of premium shoe models</li>
+            <li>Ethically sourced and sustainably produced</li>
+            <li>Expertly designed for maximum comfort</li>
             <li>Exceptional customer service and support</li>
           </ul>
         </div>

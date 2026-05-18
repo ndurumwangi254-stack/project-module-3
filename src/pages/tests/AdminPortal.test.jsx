@@ -2,7 +2,7 @@ import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, it, beforeEach, afterEach, expect } from 'vitest'
 import AdminPortal from '../AdminPortal'
-import { CoffeeProvider } from '../../context/CoffeeContext'
+import { REAL KICKS KENYAProvider } from '../../context/REAL KICKS KENYAContext'
 import { testConfig } from '../../tests/config'
 
 const mockValidFormData = {
@@ -21,9 +21,9 @@ const mockAnotherValidFormData = {
 
 const renderAdminPortal = () => {
   return render(
-    <CoffeeProvider>
+    <REAL KICKS KENYAProvider>
       <AdminPortal />
-    </CoffeeProvider>
+    </REAL KICKS KENYAProvider>
   )
 }
 
@@ -45,7 +45,7 @@ describe('AdminPortal', () => {
     it('renders the admin intro text', () => {
       renderAdminPortal()
 
-      const introText = screen.getByText(/Add new coffee blends and manage the current menu./i)
+      const introText = screen.getByText(/Add new REAL KICKS KENYA blends and manage the current menu./i)
       expect(introText).toBeInTheDocument()
     })
   })
@@ -54,7 +54,7 @@ describe('AdminPortal', () => {
     it('renders the form with all required input fields', () => {
       renderAdminPortal()
 
-      const nameInput = screen.getByLabelText(/Coffee Name/i)
+      const nameInput = screen.getByLabelText(/REAL KICKS KENYA Name/i)
       const originInput = screen.getByLabelText(/Origin/i)
       const priceInput = screen.getByLabelText(/Price/i)
       const descriptionInput = screen.getByLabelText(/Description/i)
@@ -91,11 +91,11 @@ describe('AdminPortal', () => {
   })
 
   describe('Form Input Handling', () => {
-    it('updates Coffee Name input when user types', async () => {
+    it('updates REAL KICKS KENYA Name input when user types', async () => {
       const user = userEvent.setup()
       renderAdminPortal()
 
-      const nameInput = screen.getByLabelText(/Coffee Name/i)
+      const nameInput = screen.getByLabelText(/REAL KICKS KENYA Name/i)
 
       await user.type(nameInput, mockValidFormData.name)
 
@@ -139,7 +139,7 @@ describe('AdminPortal', () => {
       const user = userEvent.setup()
       renderAdminPortal()
 
-      const nameInput = screen.getByLabelText(/Coffee Name/i)
+      const nameInput = screen.getByLabelText(/REAL KICKS KENYA Name/i)
       const originInput = screen.getByLabelText(/Origin/i)
       const priceInput = screen.getByLabelText(/Price/i)
       const descriptionInput = screen.getByLabelText(/Description/i)
@@ -160,7 +160,7 @@ describe('AdminPortal', () => {
   })
 
   describe('Form Validation', () => {
-    it('shows error message when Coffee Name field is empty on submit', async () => {
+    it('shows error message when REAL KICKS KENYA Name field is empty on submit', async () => {
       const user = userEvent.setup()
       renderAdminPortal()
 
@@ -183,7 +183,7 @@ describe('AdminPortal', () => {
       const user = userEvent.setup()
       renderAdminPortal()
 
-      const nameInput = screen.getByLabelText(/Coffee Name/i)
+      const nameInput = screen.getByLabelText(/REAL KICKS KENYA Name/i)
       const priceInput = screen.getByLabelText(/Price/i)
       const descriptionInput = screen.getByLabelText(/Description/i)
       const saveButton = screen.getByRole('button', { name: /Save/i })
@@ -202,7 +202,7 @@ describe('AdminPortal', () => {
       const user = userEvent.setup()
       renderAdminPortal()
 
-      const nameInput = screen.getByLabelText(/Coffee Name/i)
+      const nameInput = screen.getByLabelText(/REAL KICKS KENYA Name/i)
       const originInput = screen.getByLabelText(/Origin/i)
       const descriptionInput = screen.getByLabelText(/Description/i)
       const saveButton = screen.getByRole('button', { name: /Save/i })
@@ -221,7 +221,7 @@ describe('AdminPortal', () => {
       const user = userEvent.setup()
       renderAdminPortal()
 
-      const nameInput = screen.getByLabelText(/Coffee Name/i)
+      const nameInput = screen.getByLabelText(/REAL KICKS KENYA Name/i)
       const originInput = screen.getByLabelText(/Origin/i)
       const priceInput = screen.getByLabelText(/Price/i)
       const saveButton = screen.getByRole('button', { name: /Save/i })
@@ -240,7 +240,7 @@ describe('AdminPortal', () => {
       const user = userEvent.setup()
       renderAdminPortal()
 
-      const nameInput = screen.getByLabelText(/Coffee Name/i)
+      const nameInput = screen.getByLabelText(/REAL KICKS KENYA Name/i)
       const originInput = screen.getByLabelText(/Origin/i)
       const priceInput = screen.getByLabelText(/Price/i)
       const descriptionInput = screen.getByLabelText(/Description/i)
@@ -253,7 +253,7 @@ describe('AdminPortal', () => {
 
       await user.click(saveButton)
 
-      const successMessage = screen.getByText(/Coffee blend added successfully./i)
+      const successMessage = screen.getByText(/REAL KICKS KENYA blend added successfully./i)
       expect(successMessage).toBeInTheDocument()
     })
 
@@ -278,29 +278,29 @@ describe('AdminPortal', () => {
       expect(heading).toBeInTheDocument()
     })
 
-    it('displays all initial coffees in the current roasts grid', () => {
+    it('displays all initial REAL KICKS KENYAs in the current roasts grid', () => {
       renderAdminPortal()
 
-      const coffeeCards = screen.getAllByRole('generic')
+      const REAL KICKS KENYACards = screen.getAllByRole('generic')
         .filter(el => el.closest('.admin-grid'))
 
-      expect(coffeeCards.length).toBeGreaterThanOrEqual(testConfig.mockCoffees.length)
+      expect(REAL KICKS KENYACards.length).toBeGreaterThanOrEqual(testConfig.mockREAL KICKS KENYAs.length)
     })
 
-    it('displays coffee details in the admin summary grid', () => {
+    it('displays REAL KICKS KENYA details in the admin summary grid', () => {
       renderAdminPortal()
 
-      testConfig.mockCoffees.forEach(coffee => {
-        expect(screen.getByText(coffee.name)).toBeInTheDocument()
-        expect(screen.getByText(coffee.origin)).toBeInTheDocument()
+      testConfig.mockREAL KICKS KENYAs.forEach(REAL KICKS KENYA => {
+        expect(screen.getByText(REAL KICKS KENYA.name)).toBeInTheDocument()
+        expect(screen.getByText(REAL KICKS KENYA.origin)).toBeInTheDocument()
       })
     })
 
-    it('adds newly submitted coffee to the current roasts grid', async () => {
+    it('adds newly submitted REAL KICKS KENYA to the current roasts grid', async () => {
       const user = userEvent.setup()
       renderAdminPortal()
 
-      const nameInput = screen.getByLabelText(/Coffee Name/i)
+      const nameInput = screen.getByLabelText(/REAL KICKS KENYA Name/i)
       const originInput = screen.getByLabelText(/Origin/i)
       const priceInput = screen.getByLabelText(/Price/i)
       const descriptionInput = screen.getByLabelText(/Description/i)
@@ -341,33 +341,33 @@ describe('AdminPortal', () => {
     })
   })
 
-  describe('Future: Delete Coffee', () => {
-    it.todo('should display delete button on each coffee card')
-    it.todo('should remove coffee from list when delete is clicked')
+  describe('Future: Delete REAL KICKS KENYA', () => {
+    it.todo('should display delete button on each REAL KICKS KENYA card')
+    it.todo('should remove REAL KICKS KENYA from list when delete is clicked')
     it.todo('should show confirmation dialog before deleting')
   })
 
-  describe('Future: Edit Coffee', () => {
-    it.todo('should display edit button on each coffee card')
-    it.todo('should populate form with existing coffee data when edit is clicked')
-    it.todo('should update coffee in list when form is resubmitted')
+  describe('Future: Edit REAL KICKS KENYA', () => {
+    it.todo('should display edit button on each REAL KICKS KENYA card')
+    it.todo('should populate form with existing REAL KICKS KENYA data when edit is clicked')
+    it.todo('should update REAL KICKS KENYA in list when form is resubmitted')
   })
 
   describe('Future: Bulk Operations', () => {
-    it.todo('should allow selecting multiple coffees for batch operations')
-    it.todo('should delete multiple selected coffees at once')
-    it.todo('should update price for all selected coffees')
+    it.todo('should allow selecting multiple REAL KICKS KENYAs for batch operations')
+    it.todo('should delete multiple selected REAL KICKS KENYAs at once')
+    it.todo('should update price for all selected REAL KICKS KENYAs')
   })
 
   describe('Future: Data Import/Export', () => {
-    it.todo('should export coffee list as CSV file')
-    it.todo('should import coffee list from CSV file')
+    it.todo('should export REAL KICKS KENYA list as CSV file')
+    it.todo('should import REAL KICKS KENYA list from CSV file')
     it.todo('should validate imported data before adding to list')
   })
 
   describe('Future: Admin Analytics', () => {
-    it.todo('should display total number of coffees in inventory')
-    it.todo('should show most popular coffee blend')
-    it.todo('should display revenue by coffee type')
+    it.todo('should display total number of REAL KICKS KENYAs in inventory')
+    it.todo('should show most popular REAL KICKS KENYA blend')
+    it.todo('should display revenue by REAL KICKS KENYA type')
   })
 })

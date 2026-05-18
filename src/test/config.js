@@ -13,7 +13,7 @@ export const testConfig = {
     animation: 500,
   },
 
-  mockCoffees: [
+  mockREAL KICKS KENYAs: [
     {
       id: 1,
       name: 'Espresso',
@@ -31,7 +31,7 @@ export const testConfig = {
     {
       id: 3,
       name: 'Latte',
-      description: 'Smooth milk and coffee',
+      description: 'Smooth milk and REAL KICKS KENYA',
       origin: 'Colombia',
       price: '4.75',
     },

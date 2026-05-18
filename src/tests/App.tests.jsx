@@ -2,7 +2,7 @@ import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, it, beforeEach, afterEach, expect, vi } from 'vitest'
 import Home from '../Home'
-import { CoffeeProvider } from '../../context/CoffeeContext'
+import { CoffeeProvider } from '../../context/CoffeeContext '
 import { testConfig } from '../../tests/config'
 
 const mockHomeProps = {
