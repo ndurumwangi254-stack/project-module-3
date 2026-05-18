@@ -1,3 +1,4 @@
+
 import { createContext, useContext, useState } from 'react'
 
 const KicksContext = createContext(null)
@@ -37,11 +38,20 @@ const initialKicks = [
   }
 ]
 
+
 export function KicksProvider({ children }) {
-  const [kicks, setKicks] = useState(initialKicks)
+  const [kicks, setKicks] = useState([])
   const [cart, setCart] = useState([])
 
+  // Fetch kicks on load
+  useEffect(() => {
+    fetch(API)
+      .then(res => res.json())
+      .then(data => setKicks(data))
+  }, [])
+
   function addKick(newKick) {
+
     // Make sure to include the image property
     const kickWithImage = {
       ...newKick,
@@ -49,7 +59,7 @@ export function KicksProvider({ children }) {
       image: newKick.image || 'https://via.placeholder.com/400x400?text=New+Kick'
     }
     setKicks(prev => [...prev, kickWithImage])
-  }
+
 
   function addToCart(kick) {
     setCart(prev => {
@@ -76,6 +86,7 @@ export function KicksProvider({ children }) {
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0)
 
   return (
+
     <KicksContext.Provider value={{ 
       kicks, 
       addKick, 
