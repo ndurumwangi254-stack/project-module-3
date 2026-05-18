@@ -1,7 +1,9 @@
-
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useState, useEffect } from 'react'
 
 const KicksContext = createContext(null)
+
+// Replace with your actual API endpoint
+const API = 'http://localhost:3000/kicks' // or '/db.json' depending on your setup
 
 const initialKicks = [
   { 
@@ -38,7 +40,6 @@ const initialKicks = [
   }
 ]
 
-
 export function KicksProvider({ children }) {
   const [kicks, setKicks] = useState([])
   const [cart, setCart] = useState([])
@@ -48,10 +49,10 @@ export function KicksProvider({ children }) {
     fetch(API)
       .then(res => res.json())
       .then(data => setKicks(data))
+      .catch(() => setKicks(initialKicks)) // fallback to initial data if fetch fails
   }, [])
 
   function addKick(newKick) {
-
     // Make sure to include the image property
     const kickWithImage = {
       ...newKick,
@@ -59,7 +60,7 @@ export function KicksProvider({ children }) {
       image: newKick.image || 'https://via.placeholder.com/400x400?text=New+Kick'
     }
     setKicks(prev => [...prev, kickWithImage])
-
+  } // <-- Closing brace for addKick
 
   function addToCart(kick) {
     setCart(prev => {
@@ -86,7 +87,6 @@ export function KicksProvider({ children }) {
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0)
 
   return (
-
     <KicksContext.Provider value={{ 
       kicks, 
       addKick, 
